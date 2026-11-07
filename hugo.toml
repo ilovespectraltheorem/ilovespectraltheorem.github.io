@@ -28,7 +28,18 @@ theme = 'hugo-xmin'
   weight = 5
 
 [params]
+  description = 'Notes on mathematics by a Pure Maths student at Imperial College London.'
   footer = '&copy; ilovespectraltheorem {Year} | [GitHub](https://github.com/ilovespectraltheorem)'
 
 [markup.goldmark.renderer]
   unsafe = true
+
+# Protect LaTeX from Markdown: $...$, \(...\) inline; $$...$$, \[...\] display
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)'], ['$', '$']]
+
+[caches.images]
+  dir = ':cacheDir/images'
