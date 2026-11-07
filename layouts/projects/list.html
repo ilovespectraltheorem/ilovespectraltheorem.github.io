@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+<div class="cards">
+  {{ range .RegularPages.ByWeight }}
+  <article class="card">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.tech }}<p class="tech">{{ range . }}<span>{{ . }}</span>{{ end }}</p>{{ end }}
+    <p class="links">
+      {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code ↗</a>{{ end }}
+      {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Demo ↗</a>{{ end }}
+    </p>
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}

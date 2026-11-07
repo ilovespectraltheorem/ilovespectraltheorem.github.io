@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+{{ if eq .Parent.Kind "home" }}
+  {{/* /solutions/ : every subject, with its solutions underneath */}}
+  {{ range .Sections }}
+  <section class="subject">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="count">{{ len .RegularPages }}</span></h2>
+    {{ with .Description }}<p class="subject-desc">{{ . }}</p>{{ end }}
+    <ul class="solutions">
+      {{ range .RegularPages.ByTitle }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Params.source }} <span class="source">{{ . }}</span>{{ end }}</li>
+      {{ else }}
+      <li class="empty">Nothing here yet.</li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ else }}
+  {{/* /solutions/<subject>/ */}}
+  <ul class="solutions">
+    {{ range .RegularPages.ByTitle }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ with .Params.source }} <span class="source">{{ . }}</span>{{ end }}</li>
+    {{ else }}
+    <li class="empty">Nothing here yet.</li>
+    {{ end }}
+  </ul>
+  <p class="back"><a href="{{ .Parent.RelPermalink }}">← All subjects</a></p>
+{{ end }}
+
+{{ partial "footer.html" . }}

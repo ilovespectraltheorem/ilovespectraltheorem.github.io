@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+{{ with .Description }}<h2 class="author">{{ . }}</h2>{{ end }}
+</div>
+
+<main>
+{{ .Content }}
+{{ with .Params.external }}<p class="links big"><a href="{{ . }}" target="_blank" rel="noopener">Open ↗</a></p>{{ end }}
+</main>
+
+<p class="back"><a href="{{ .Parent.RelPermalink }}">← Back to Play</a></p>
+{{ partial "footer.html" . }}

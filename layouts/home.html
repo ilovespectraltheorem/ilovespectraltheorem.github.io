@@ -1,0 +1,43 @@
+{{ partial "header.html" . }}
+
+<main>
+{{ .Content }}
+
+{{ with site.GetPage "/solutions" }}
+<h2 class="home-h"><a href="{{ .RelPermalink }}">Solutions</a></h2>
+<ul class="subjects">
+  {{ range .Sections }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="count">{{ len .RegularPages }}</span></li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ with site.GetPage "/projects" }}
+<h2 class="home-h"><a href="{{ .RelPermalink }}">Projects</a></h2>
+<ul>
+  {{ range first 3 .RegularPages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }} — {{ . }}{{ end }}</li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ with site.GetPage "/play" }}
+<h2 class="home-h"><a href="{{ .RelPermalink }}">Play</a></h2>
+<ul>
+  {{ range .RegularPages }}
+  <li>{{ partial "play-link.html" . }}{{ with .Description }} — {{ . }}{{ end }}</li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ with site.GetPage "/post" }}
+<h2 class="home-h"><a href="{{ .RelPermalink }}">Latest posts</a></h2>
+<ul>
+  {{ range first 5 .RegularPages }}
+  <li><span class="date">{{ .Date.Format "2006/01/02" }}</span> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+</main>
+
+{{ partial "footer.html" . }}

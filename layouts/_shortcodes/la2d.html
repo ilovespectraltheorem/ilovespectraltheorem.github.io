@@ -1,0 +1,5 @@
+<div class="la2d" data-matrix="{{ .Get "matrix" | default "1,1,0,1" }}"></div>
+{{- if not (.Page.Store.Get "la2d") -}}
+{{- .Page.Store.Set "la2d" true -}}
+<script src="{{ "js/la2d.js" | relURL }}" defer></script>
+{{- end -}}

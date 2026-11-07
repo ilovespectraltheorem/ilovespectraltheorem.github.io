@@ -1,0 +1,5 @@
+{{- $summary := .Get "summary" | default "Solution" -}}
+<details class="solution"{{ if .Get "open" }} open{{ end }}>
+<summary>{{ $summary }}</summary>
+{{ .Inner | .Page.RenderString (dict "display" "block") }}
+</details>

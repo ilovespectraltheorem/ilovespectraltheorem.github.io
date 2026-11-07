@@ -1,0 +1,45 @@
+/* Home + section lists */
+.home-h { margin-top: 1.8em; font-size: 1.2em; }
+.home-h a { text-decoration: none; }
+.count { font-size: .75em; background: #eee; border-radius: 10px; padding: 0 .5em; vertical-align: middle; }
+.source { color: #777; font-size: .9em; }
+.source::before { content: "· "; }
+.ext { color: #999; font-size: .85em; }
+.empty { color: #999; list-style: none; }
+.subject { margin-bottom: 1.5em; }
+.subject h2 { font-size: 1.15em; border-bottom: 1px dashed #ddd; padding-bottom: .2em; }
+.subject h2 a { text-decoration: none; }
+.subject-desc { color: #666; margin: .3em 0; }
+.crumbs { margin: 0 0 .3em; font-size: .9em; }
+.crumbs a { text-decoration: none; }
+.back { margin-top: 2em; }
+.tags a { background: #eee; border-radius: 5px; padding: 1px 6px; text-decoration: none; font-size: .9em; }
+
+/* Collapsible solutions */
+details.solution { border: 1px solid #ddd; border-radius: 5px; padding: .3em 1em; margin: 1em 0; }
+details.solution summary { cursor: pointer; font-weight: bold; }
+details.solution[open] summary { margin-bottom: .5em; }
+
+/* Cards (projects, play) */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1em; margin: 1.5em 0; }
+.card { border: 1px solid #ddd; border-radius: 8px; padding: .8em 1em; box-shadow: 3px 3px 6px #f0f0f0; }
+.card h2 { font-size: 1.1em; margin: .2em 0 .4em; }
+.card h2 a { text-decoration: none; }
+.card p { margin: .4em 0; }
+.tech span { display: inline-block; font-size: .8em; background: #f3f3f3; border-radius: 4px; padding: 0 6px; margin: 0 4px 4px 0; }
+.links a { display: inline-block; margin-right: .8em; text-decoration: none; background: #eee; border-radius: 5px; padding: 2px 8px; }
+.links.big a { font-size: 1.2em; padding: 6px 14px; }
+
+/* Linear algebra playground */
+.la2d { margin: 1.5em 0; }
+.la2d-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1em; margin-bottom: .8em; }
+.la2d-matrix { display: flex; align-items: center; }
+.la2d-matrix .bracket { font-size: 3.2em; font-weight: 200; line-height: 1; }
+.la2d-matrix .grid { display: grid; grid-template-columns: 4.5em 4.5em; gap: 4px; }
+.la2d-matrix input { width: 4.2em; font-size: 1em; text-align: center; }
+.la2d-presets button { margin: 2px; padding: 3px 8px; border: 1px solid #ccc; background: #f7f7f7; border-radius: 5px; cursor: pointer; font: inherit; font-size: .9em; }
+.la2d-presets button:hover { background: #eee; }
+.la2d-t { font-size: .9em; }
+.la2d canvas { border: 1px solid #ddd; border-radius: 5px; display: block; }
+.la2d-info { display: flex; flex-wrap: wrap; gap: .4em 1.5em; margin: .6em 0; }
+.la2d-legend { font-size: .85em; color: #666; }

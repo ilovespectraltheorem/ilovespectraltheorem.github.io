@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+{{ with .Description }}<h2 class="author">{{ . }}</h2>{{ end }}
+</div>
+
+{{ with .Params.tech }}<p class="tech">{{ range . }}<span>{{ . }}</span>{{ end }}</p>{{ end }}
+<p class="links">
+  {{ with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener">Code ↗</a>{{ end }}
+  {{ with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener">Demo ↗</a>{{ end }}
+</p>
+
+<main>
+{{ .Content }}
+</main>
+
+<p class="back"><a href="{{ .Parent.RelPermalink }}">← All projects</a></p>
+{{ partial "footer.html" . }}

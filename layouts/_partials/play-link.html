@@ -1,0 +1,5 @@
+{{- with .Params.external -}}
+<a href="{{ . }}" target="_blank" rel="noopener">{{ $.Title }}</a> <span class="ext">↗</span>
+{{- else -}}
+<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+{{- end -}}

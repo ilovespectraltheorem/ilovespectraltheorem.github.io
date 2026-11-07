@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<p class="crumbs"><a href="{{ .Parent.Parent.RelPermalink }}">Solutions</a> › <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+{{ with .Params.source }}<h2 class="author">{{ . }}</h2>{{ end }}
+{{ if (gt .Params.date 0) }}<h2 class="date">{{ .Date.Format "2006/01/02" }}</h2>{{ end }}
+</div>
+
+<main>
+{{ .Content }}
+</main>
+
+{{ with .GetTerms "tags" }}
+<p class="tags">Tags: {{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}</p>
+{{ end }}
+<p class="back"><a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a></p>
+
+{{ partial "footer.html" . }}

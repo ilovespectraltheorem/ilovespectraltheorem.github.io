@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+
+<div class="cards">
+  {{ range .RegularPages.ByWeight }}
+  <article class="card">
+    <h2>{{ partial "play-link.html" . }}</h2>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
