@@ -7,7 +7,7 @@ theme = 'hugo-xmin'
   post = '/post/:year/:month/:day/:slug/'
 
 [[menus.main]]
-  name = 'Home'
+  name = 'About'
   url = '/'
   weight = 1
 [[menus.main]]
@@ -26,10 +26,6 @@ theme = 'hugo-xmin'
   name = 'Posts'
   url = '/post/'
   weight = 5
-[[menus.main]]
-  name = 'About'
-  url = '/about/'
-  weight = 6
 
 [params]
   description = 'Notes on mathematics by a Pure Maths student at Imperial College London.'
