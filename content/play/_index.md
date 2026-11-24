@@ -1,4 +1,4 @@
 +++
 title = 'Play'
 +++
-Interactive maths: things to poke at, and games to play.
+Things to poke at and play: interactive maths, and games I've made.
