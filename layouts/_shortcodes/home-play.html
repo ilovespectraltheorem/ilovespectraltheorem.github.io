@@ -1,7 +1,0 @@
-{{- with site.GetPage "/play" }}
-<ul>
-  {{- range .RegularPages.ByWeight }}
-  <li>{{ partial "play-link.html" . }}{{ with .Description }} — {{ . }}{{ end }}</li>
-  {{- end }}
-</ul>
-{{- end }}
